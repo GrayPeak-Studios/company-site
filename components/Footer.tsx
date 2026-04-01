@@ -6,9 +6,9 @@ const siteDescription =
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/#about" },
-  { label: "Services", href: "/#services" },
-  { label: "Contact", href: "/#contact" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Contact", href: "/contact" },
   { label: "Portfolio", href: "/#portfolio" },
   { label: "Pricing", href: "/#pricing" },
   { label: "Blog", href: "/#blog" },

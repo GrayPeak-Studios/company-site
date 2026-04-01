@@ -5,9 +5,9 @@ const siteName = "GrayPeak Studio";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/#about" },
-  { label: "Services", href: "/#services" },
-  { label: "Contact", href: "/#contact" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 export function Navbar() {
@@ -37,7 +37,7 @@ export function Navbar() {
           ))}
           <li className="ml-2 pl-2">
             <Link
-              href="/#contact"
+              href="/contact"
               className="inline-flex items-center rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-zinc-800"
             >
               Get Started

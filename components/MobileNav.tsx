@@ -70,7 +70,7 @@ export function MobileNav({ links }: { links: readonly NavLink[] }) {
             ))}
             <li className="pt-2">
               <Link
-                href="/#contact"
+                href="/contact"
                 className="block rounded-lg bg-zinc-900 px-3 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-zinc-800"
                 onClick={() => setOpen(false)}
               >

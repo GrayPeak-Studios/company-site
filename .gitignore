@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Next.js build & dev cache (never commit)
+.next/
+out/
+
+# Debug / env
+.env*.local
+npm-debug.log*
+
+# OS
+.DS_Store

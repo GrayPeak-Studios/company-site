@@ -4,3 +4,97 @@
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
+
+/* Hero illustration — automatic motion */
+@keyframes hero-illus-drift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -10px);
+  }
+}
+
+@keyframes hero-illus-badge {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -16px);
+  }
+}
+
+@keyframes hero-illus-shimmer {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes hero-illus-brackets {
+  0%,
+  100% {
+    opacity: 0.65;
+    stroke-width: 3px;
+  }
+  50% {
+    opacity: 1;
+    stroke-width: 3.6px;
+  }
+}
+
+@keyframes hero-illus-dots {
+  0%,
+  100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.hero-illus-drift {
+  animation: hero-illus-drift 7s ease-in-out infinite;
+}
+
+.hero-illus-badge {
+  animation: hero-illus-badge 5.5s ease-in-out infinite;
+  animation-delay: 0.35s;
+}
+
+.hero-illus-shimmer {
+  animation: hero-illus-shimmer 3.2s ease-in-out infinite;
+}
+
+.hero-illus-brackets {
+  animation: hero-illus-brackets 2.8s ease-in-out infinite;
+}
+
+.hero-illus-dot-a {
+  animation: hero-illus-dots 2.4s ease-in-out infinite;
+}
+.hero-illus-dot-b {
+  animation: hero-illus-dots 2.4s ease-in-out infinite;
+  animation-delay: 0.25s;
+}
+.hero-illus-dot-c {
+  animation: hero-illus-dots 2.4s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-illus-drift,
+  .hero-illus-badge,
+  .hero-illus-shimmer,
+  .hero-illus-brackets,
+  .hero-illus-dot-a,
+  .hero-illus-dot-b,
+  .hero-illus-dot-c {
+    animation: none;
+  }
+}

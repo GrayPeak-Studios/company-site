@@ -1,6 +1,7 @@
 import Link from "next/link";
 
-const title = "GrayPeak Studio";
+const titleLine1 = "GrayPeak";
+const titleLine2 = "Studio";
 const subtitle =
   "Web design and development crafted for clarity, speed, and lasting quality.";
 
@@ -168,50 +169,66 @@ function HeroWebDevIllustration({ className }: { className?: string }) {
 export function Hero() {
   return (
     <section
-      className="relative isolate overflow-hidden border-b border-zinc-200/80 bg-gradient-to-b from-zinc-50/80 to-white"
+      className="relative isolate overflow-hidden border-b border-zinc-200/70 bg-gradient-to-b from-zinc-100/90 via-white to-white"
       aria-labelledby="hero-heading"
     >
       <div
-        className="pointer-events-none absolute inset-0 -z-10 opacity-40"
+        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.4]"
+        aria-hidden
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, rgb(24 24 27 / 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgb(24 24 27 / 0.06) 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute inset-0 -z-10"
         aria-hidden
       >
-        <div className="absolute right-0 top-0 h-[min(70vw,480px)] w-[min(70vw,480px)] translate-x-1/4 -translate-y-1/4 rounded-full bg-zinc-200/60 blur-3xl" />
-        <div className="absolute bottom-0 left-0 h-[min(50vw,320px)] w-[min(50vw,320px)] -translate-x-1/3 translate-y-1/4 rounded-full bg-zinc-100 blur-3xl" />
+        <div className="absolute right-0 top-0 h-[min(72vw,500px)] w-[min(72vw,500px)] translate-x-[18%] -translate-y-[28%] rounded-full bg-zinc-300/35 blur-3xl" />
+        <div className="absolute bottom-0 left-0 h-[min(52vw,340px)] w-[min(52vw,340px)] -translate-x-[32%] translate-y-[22%] rounded-full bg-zinc-200/50 blur-3xl" />
+        <div className="absolute left-1/2 top-1/2 h-[min(100vw,38rem)] w-[min(100vw,38rem)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/80 blur-3xl" />
       </div>
 
       <div className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-10 xl:gap-16">
+        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-12 xl:gap-16">
           <div>
-            <p className="text-sm font-medium uppercase tracking-widest text-zinc-500">
-              Web studio
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
+              Design &amp; development
             </p>
             <h1
               id="hero-heading"
-              className="mt-3 text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl sm:leading-tight lg:text-6xl"
+              className="mt-4 text-4xl font-semibold leading-[1.08] tracking-tight text-zinc-900 sm:text-5xl sm:leading-[1.06] lg:text-6xl lg:leading-[1.05] xl:text-7xl"
             >
-              {title}
+              <span className="block">{titleLine1}</span>
+              <span className="mt-1 block text-zinc-500">{titleLine2}</span>
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-zinc-600 sm:text-xl">
+            <p className="mt-8 max-w-prose border-l-2 border-zinc-900/10 pl-5 text-lg leading-relaxed text-zinc-600 sm:text-xl">
               {subtitle}
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
               <Link
                 href="/contact"
-                className="inline-flex h-11 items-center justify-center rounded-lg bg-zinc-900 px-6 text-sm font-medium text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900"
+                className="inline-flex h-12 items-center justify-center rounded-full bg-zinc-950 px-8 text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
               >
                 Start a project
               </Link>
               <Link
                 href="/services"
-                className="inline-flex h-11 items-center justify-center rounded-lg border border-zinc-300 bg-white px-6 text-sm font-medium text-zinc-800 transition-colors hover:border-zinc-400 hover:bg-zinc-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900"
+                className="inline-flex items-center gap-1 text-sm font-medium text-zinc-600 underline decoration-zinc-300 underline-offset-[0.22em] hover:text-zinc-900 hover:decoration-zinc-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
               >
                 View services
+                <span aria-hidden className="translate-y-px">
+                  →
+                </span>
               </Link>
             </div>
           </div>
 
           <div className="flex justify-center lg:justify-end">
-            <HeroWebDevIllustration className="h-auto w-full max-w-sm lg:max-w-md xl:max-w-lg" />
+            <div className="relative w-full max-w-sm rounded-[1.75rem] border border-zinc-200/90 bg-white/85 p-5 shadow-[0_24px_60px_-12px_rgb(0_0_0_/0.08)] ring-1 ring-zinc-950/[0.04] sm:max-w-md sm:p-6 lg:max-w-lg xl:max-w-xl">
+              <HeroWebDevIllustration className="h-auto w-full" />
+            </div>
           </div>
         </div>
       </div>

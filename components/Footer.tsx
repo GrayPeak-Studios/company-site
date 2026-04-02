@@ -4,11 +4,14 @@ const siteName = "GrayPeak Studio";
 const siteDescription =
   "Web design and development crafted for clarity, speed, and lasting quality.";
 
-const navLinks = [
+const primaryLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Contact", href: "/contact" },
+] as const;
+
+const secondaryLinks = [
   { label: "Portfolio", href: "/#portfolio" },
   { label: "Pricing", href: "/#pricing" },
   { label: "Blog", href: "/#blog" },
@@ -28,7 +31,7 @@ const socialLinks = [
 ] as const;
 
 function SocialIcon({ network }: { network: (typeof socialLinks)[number]["name"] }) {
-  const className = "h-5 w-5";
+  const className = "h-[1.125rem] w-[1.125rem]";
   switch (network) {
     case "X":
       return (
@@ -69,42 +72,84 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-zinc-200/80 bg-white/80 backdrop-blur-sm">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
-          <div className="max-w-md">
+    <footer className="relative isolate overflow-hidden border-t border-zinc-200/70 bg-gradient-to-b from-zinc-50/90 to-white">
+      <div
+        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.35]"
+        aria-hidden
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, rgb(24 24 27 / 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgb(24 24 27 / 0.05) 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
+      />
+      <div className="relative z-10 mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
+          <div className="lg:col-span-5">
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
+              Web studio
+            </p>
             <Link
               href="/"
-              className="text-lg font-semibold tracking-tight text-zinc-900"
+              className="mt-3 inline-flex items-baseline gap-1.5 text-zinc-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
             >
-              {siteName}
+              <span className="text-lg font-semibold tracking-tight sm:text-xl">
+                GrayPeak
+              </span>
+              <span className="text-lg font-medium tracking-tight text-zinc-500 sm:text-xl">
+                Studio
+              </span>
             </Link>
-            <p className="mt-3 text-sm leading-relaxed text-zinc-600">
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-zinc-600 sm:text-[0.9375rem]">
               {siteDescription}
             </p>
           </div>
 
-          <nav aria-label="Footer">
-            <ul className="grid grid-cols-1 gap-x-10 gap-y-3 sm:grid-cols-2 sm:justify-items-end">
-              {navLinks.map((item) => (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-zinc-600 transition-colors hover:text-zinc-900"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <div className="grid gap-10 sm:grid-cols-2 lg:col-span-7 lg:grid-cols-2 lg:gap-8">
+            <nav aria-label="Footer primary">
+              <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
+                Navigate
+              </p>
+              <ul className="mt-4 flex flex-col gap-2.5">
+                {primaryLinks.map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      className="text-sm font-medium text-zinc-600 hover:text-zinc-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <nav aria-label="Footer more">
+              <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
+                More
+              </p>
+              <ul className="mt-4 flex flex-col gap-2.5">
+                {secondaryLinks.map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      className="text-sm font-medium text-zinc-600 hover:text-zinc-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-6 border-t border-zinc-100 pt-8 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-6 border-t border-zinc-200/80 pt-8 sm:flex-row sm:items-center sm:justify-between lg:mt-16">
           <p className="text-sm text-zinc-500">
-            © {year} {siteName}. All rights reserved.
+            © {year}{" "}
+            <span className="font-medium text-zinc-700">{siteName}</span>. All rights
+            reserved.
           </p>
-          <div className="flex items-center gap-1">
+          <div className="flex flex-wrap items-center gap-2">
             <span className="sr-only">Social media</span>
             {socialLinks.map(({ name, href }) => (
               <a
@@ -112,7 +157,7 @@ export function Footer() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg p-2 text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-900"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200/90 text-zinc-500 hover:border-zinc-300 hover:bg-white hover:text-zinc-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
                 aria-label={`${siteName} on ${name}`}
               >
                 <SocialIcon network={name} />

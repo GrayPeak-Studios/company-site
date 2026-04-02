@@ -1,12 +1,10 @@
 import Link from "next/link";
 
-const CARD_BG = "rgb(242, 244, 247)";
+const cardBase =
+  "flex flex-col rounded-2xl border border-zinc-200/80 bg-white/90 p-7 shadow-sm shadow-zinc-200/40 ring-1 ring-zinc-950/[0.03] transition-[border-color,box-shadow,transform] duration-300 ease-out motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-[0_24px_48px_-12px_rgb(0_0_0_/0.08)] hover:border-zinc-300/90 sm:p-8";
 
-const cardHoverLight =
-  "transition duration-300 ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-md motion-safe:hover:shadow-zinc-300/40 hover:border-zinc-400";
-
-const cardHoverFeatured =
-  "transition duration-300 ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg motion-safe:hover:shadow-zinc-400/35 hover:border-black";
+const cardFeatured =
+  "flex flex-col rounded-2xl border border-zinc-900/25 bg-gradient-to-b from-zinc-50/95 to-white p-7 shadow-md shadow-zinc-300/30 ring-1 ring-zinc-900/[0.08] transition-[border-color,box-shadow,transform] duration-300 ease-out motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-[0_28px_56px_-14px_rgb(0_0_0_/0.12)] hover:border-zinc-900/40 sm:p-8";
 
 const whyChooseUsContent = {
   badge: "Why choose us",
@@ -51,7 +49,7 @@ function IconInstructors() {
   return (
     <svg
       viewBox="0 0 48 48"
-      className="h-6 w-6 text-black"
+      className="h-6 w-6 text-zinc-600"
       fill="none"
       stroke="currentColor"
       strokeWidth="1.75"
@@ -71,7 +69,7 @@ function IconRocket() {
   return (
     <svg
       viewBox="0 0 48 48"
-      className="h-6 w-6 text-black"
+      className="h-6 w-6 text-zinc-600"
       fill="none"
       stroke="currentColor"
       strokeWidth="1.75"
@@ -89,7 +87,7 @@ function IconTarget() {
   return (
     <svg
       viewBox="0 0 48 48"
-      className="h-6 w-6 text-black"
+      className="h-6 w-6 text-zinc-600"
       fill="none"
       stroke="currentColor"
       strokeWidth="1.75"
@@ -107,7 +105,7 @@ function IconTablet() {
   return (
     <svg
       viewBox="0 0 48 48"
-      className="h-7 w-7 text-black"
+      className="h-6 w-6 text-zinc-600"
       fill="none"
       stroke="currentColor"
       strokeWidth="1.75"
@@ -127,10 +125,10 @@ const iconComponents = {
   tablet: IconTablet,
 } as const;
 
-function IconCircle({ children }: { children: React.ReactNode }) {
+function IconWell({ children }: { children: React.ReactNode }) {
   return (
     <div
-      className="mb-5 flex h-14 w-14 items-center justify-center rounded-full border-2 border-black bg-white"
+      className="mb-5 inline-flex rounded-2xl bg-zinc-100 p-3.5 ring-1 ring-zinc-950/[0.04]"
       aria-hidden
     >
       {children}
@@ -146,88 +144,109 @@ export function WhyChooseUs() {
   const TallIcon = iconComponents[c.tall.icon];
 
   return (
-    <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-      <div className="mx-auto max-w-6xl">
-        <div className="inline-flex rounded-full border border-zinc-400 bg-zinc-100/80 px-4 py-1.5">
-          <span className="text-xs font-semibold uppercase tracking-wide text-black">
-            {c.badge}
-          </span>
-        </div>
+    <section
+      className="relative isolate overflow-hidden border-b border-zinc-200/70 bg-gradient-to-b from-white via-zinc-50/50 to-zinc-100/60 px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28"
+      aria-labelledby="why-choose-heading"
+    >
+      <div
+        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.35]"
+        aria-hidden
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, rgb(24 24 27 / 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgb(24 24 27 / 0.05) 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute inset-0 -z-10"
+        aria-hidden
+      >
+        <div className="absolute left-0 top-1/3 h-[min(60vw,24rem)] w-[min(60vw,24rem)] -translate-x-1/3 rounded-full bg-zinc-200/35 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-[min(65vw,26rem)] w-[min(65vw,26rem)] translate-x-1/4 translate-y-1/4 rounded-full bg-white/80 blur-3xl" />
+      </div>
 
-        <h2 className="mt-5 max-w-3xl text-3xl font-bold leading-tight tracking-tight text-black sm:text-4xl lg:text-[2.5rem] lg:leading-snug">
-          {c.heading.lineBefore}{" "}
-          <span className="font-bold text-black">{c.heading.lineHighlight}</span>{" "}
-          {c.heading.lineAfter}
+      <div className="relative mx-auto max-w-6xl">
+        <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
+          {c.badge}
+        </p>
+
+        <h2
+          id="why-choose-heading"
+          className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.12] tracking-tight text-zinc-900 sm:text-4xl sm:leading-[1.1] lg:text-[2.65rem] lg:leading-[1.08]"
+        >
+          <span className="block">
+            {c.heading.lineBefore}{" "}
+            <span className="text-zinc-900">{c.heading.lineHighlight}</span>
+          </span>
+          <span className="mt-1 block text-zinc-500">{c.heading.lineAfter}</span>
         </h2>
 
-        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3 md:grid-rows-2">
+        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3 md:grid-rows-2 md:gap-8">
           <article
-            className={`flex flex-col rounded-2xl border border-zinc-200 p-8 md:col-start-1 md:row-start-1 ${cardHoverLight}`}
-            style={{ backgroundColor: CARD_BG }}
+            className={`${cardBase} md:col-start-1 md:row-start-1`}
           >
-            <IconCircle>
+            <IconWell>
               <TopLeftIcon />
-            </IconCircle>
-            <h3 className="text-lg font-bold text-black sm:text-xl">
+            </IconWell>
+            <h3 className="text-lg font-semibold leading-snug text-zinc-900 sm:text-xl">
               {c.topLeft.title}
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-black sm:text-base">
+            <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-base">
               {c.topLeft.description}
             </p>
           </article>
 
           <article
-            className={`flex flex-col rounded-2xl border border-zinc-200 p-8 md:col-start-2 md:row-start-1 ${cardHoverLight}`}
-            style={{ backgroundColor: CARD_BG }}
+            className={`${cardBase} md:col-start-2 md:row-start-1`}
           >
-            <IconCircle>
+            <IconWell>
               <TopMidIcon />
-            </IconCircle>
-            <h3 className="text-lg font-bold text-black sm:text-xl">
+            </IconWell>
+            <h3 className="text-lg font-semibold leading-snug text-zinc-900 sm:text-xl">
               {c.topMiddle.title}
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-black sm:text-base">
+            <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-base">
               {c.topMiddle.description}
             </p>
           </article>
 
           <article
-            className={`flex flex-col rounded-2xl border border-zinc-200 p-8 md:col-span-2 md:col-start-1 md:row-start-2 ${cardHoverLight}`}
-            style={{ backgroundColor: CARD_BG }}
+            className={`${cardBase} md:col-span-2 md:col-start-1 md:row-start-2`}
           >
-            <IconCircle>
+            <IconWell>
               <WideIcon />
-            </IconCircle>
-            <h3 className="text-lg font-bold text-black sm:text-xl">
+            </IconWell>
+            <h3 className="text-lg font-semibold leading-snug text-zinc-900 sm:text-xl">
               {c.bottomWide.title}
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-black sm:text-base">
+            <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-base">
               {c.bottomWide.description}
             </p>
           </article>
 
           <article
-            className={`flex flex-col rounded-2xl border-2 border-black p-8 md:col-start-3 md:row-span-2 md:row-start-1 ${cardHoverFeatured}`}
-            style={{ backgroundColor: CARD_BG }}
+            className={`${cardFeatured} md:col-start-3 md:row-span-2 md:row-start-1`}
           >
-            <IconCircle>
+            <IconWell>
               <TallIcon />
-            </IconCircle>
-            <h3 className="text-lg font-bold text-black sm:text-xl">{c.tall.title}</h3>
+            </IconWell>
+            <h3 className="text-lg font-semibold leading-snug text-zinc-900 sm:text-xl">
+              {c.tall.title}
+            </h3>
             {c.tall.paragraphs.map((paragraph, i) => (
               <p
                 key={i}
-                className={`text-sm leading-relaxed text-black sm:text-base ${i === 0 ? "mt-3 flex-1" : "mt-4"}`}
+                className={`text-sm leading-relaxed text-zinc-600 sm:text-base ${i === 0 ? "mt-3 flex-1" : "mt-4"}`}
               >
                 {paragraph}
               </p>
             ))}
             <Link
               href={c.tall.cta.href}
-              className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-black px-6 py-3 text-sm font-semibold text-white"
+              className="mt-8 inline-flex h-12 w-fit items-center gap-2 rounded-full bg-zinc-950 px-8 text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
             >
               {c.tall.cta.label}
-              <span aria-hidden className="inline-block">
+              <span aria-hidden className="translate-y-px">
                 →
               </span>
             </Link>

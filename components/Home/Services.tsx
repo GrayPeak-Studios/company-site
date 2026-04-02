@@ -1,6 +1,6 @@
 function IconBehavior() {
   return (
-    <svg viewBox="0 0 64 64" className="h-14 w-14 text-black" fill="none" aria-hidden>
+    <svg viewBox="0 0 64 64" className="h-11 w-11 shrink-0 text-zinc-600" fill="none" aria-hidden>
       <circle cx="32" cy="38" r="12" stroke="currentColor" strokeWidth="2" />
       <path
         d="M24 22c2-4 8-8 16-6 4 1 6 4 7 7"
@@ -21,7 +21,7 @@ function IconBehavior() {
 
 function IconChildDevelopment() {
   return (
-    <svg viewBox="0 0 64 64" className="h-14 w-14 text-black" fill="none" aria-hidden>
+    <svg viewBox="0 0 64 64" className="h-11 w-11 shrink-0 text-zinc-600" fill="none" aria-hidden>
       <path
         d="M18 20c4-10 20-10 26 2 4 9-2 18-8 22"
         stroke="currentColor"
@@ -41,7 +41,7 @@ function IconChildDevelopment() {
 
 function IconDigitalMedia() {
   return (
-    <svg viewBox="0 0 64 64" className="h-14 w-14 text-black" fill="none" aria-hidden>
+    <svg viewBox="0 0 64 64" className="h-11 w-11 shrink-0 text-zinc-600" fill="none" aria-hidden>
       <rect
         x="14"
         y="18"
@@ -65,7 +65,7 @@ function IconDigitalMedia() {
 
 function IconEducation() {
   return (
-    <svg viewBox="0 0 64 64" className="h-14 w-14 text-black" fill="none" aria-hidden>
+    <svg viewBox="0 0 64 64" className="h-11 w-11 shrink-0 text-zinc-600" fill="none" aria-hidden>
       <path
         d="M32 14 48 22 32 30 16 22 32 14z"
         stroke="currentColor"
@@ -89,7 +89,7 @@ function IconEducation() {
 
 function IconNutrition() {
   return (
-    <svg viewBox="0 0 64 64" className="h-14 w-14 text-black" fill="none" aria-hidden>
+    <svg viewBox="0 0 64 64" className="h-11 w-11 shrink-0 text-zinc-600" fill="none" aria-hidden>
       <circle cx="22" cy="18" r="6" stroke="currentColor" strokeWidth="2" />
       <path
         d="M22 26v6M18 36c-4 8 2 20 14 22 12-2 18-14 14-22-2-4-6-6-10-6h-8c-4 0-8 2-10 6z"
@@ -110,7 +110,7 @@ function IconNutrition() {
 
 function IconSleep() {
   return (
-    <svg viewBox="0 0 64 64" className="h-14 w-14 text-black" fill="none" aria-hidden>
+    <svg viewBox="0 0 64 64" className="h-11 w-11 shrink-0 text-zinc-600" fill="none" aria-hidden>
       <circle cx="32" cy="34" r="16" stroke="currentColor" strokeWidth="2" />
       <path
         d="M32 24v10l8 4"
@@ -137,7 +137,7 @@ function IconSleep() {
 
 function IconWeaning() {
   return (
-    <svg viewBox="0 0 64 64" className="h-14 w-14 text-black" fill="none" aria-hidden>
+    <svg viewBox="0 0 64 64" className="h-11 w-11 shrink-0 text-zinc-600" fill="none" aria-hidden>
       <path
         d="M18 40c0-8 8-14 18-14s18 6 18 14"
         stroke="currentColor"
@@ -158,7 +158,7 @@ function IconWeaning() {
 
 function IconLactation() {
   return (
-    <svg viewBox="0 0 64 64" className="h-14 w-14 text-black" fill="none" aria-hidden>
+    <svg viewBox="0 0 64 64" className="h-11 w-11 shrink-0 text-zinc-600" fill="none" aria-hidden>
       <circle cx="38" cy="22" r="8" stroke="currentColor" strokeWidth="2" />
       <path
         d="M30 30c-6 4-10 12-10 20v6h24v-6c0-6-3-12-8-16"
@@ -225,28 +225,59 @@ const cards = [
 
 export function Services() {
   return (
-    <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-      <div className="mx-auto max-w-6xl">
-        <h2 className="mx-auto max-w-4xl text-center text-2xl font-bold leading-tight tracking-tight text-black sm:text-3xl md:text-[2rem] md:leading-snug lg:text-4xl">
-          What web problems would you like to solve next
-        </h2>
-        <p className="mx-auto mt-5 max-w-2xl text-center text-base leading-relaxed text-black sm:text-lg">
-          From first landing page to long-term product work, we help teams ship fast,
-          reliable sites—clear scope, modern stacks, and documentation you can hand off
-          without guesswork.
-        </p>
+    <section
+      className="relative isolate overflow-hidden border-b border-zinc-200/70 bg-gradient-to-b from-zinc-100/70 via-white to-zinc-50/40 px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28"
+      aria-labelledby="services-heading"
+    >
+      <div
+        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.35]"
+        aria-hidden
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, rgb(24 24 27 / 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgb(24 24 27 / 0.05) 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute inset-0 -z-10"
+        aria-hidden
+      >
+        <div className="absolute left-1/2 top-0 h-[min(80vw,28rem)] w-[min(80vw,28rem)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/90 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-[min(55vw,22rem)] w-[min(55vw,22rem)] translate-x-1/4 translate-y-1/3 rounded-full bg-zinc-200/40 blur-3xl" />
+      </div>
 
-        <ul className="mt-12 grid list-none gap-8 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4">
+      <div className="relative mx-auto max-w-6xl">
+        <p className="text-center font-mono text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
+          Capabilities
+        </p>
+        <h2
+          id="services-heading"
+          className="mx-auto mt-4 max-w-4xl text-center text-3xl font-semibold leading-[1.12] tracking-tight text-zinc-900 sm:text-4xl sm:leading-[1.1] lg:text-[2.65rem] lg:leading-[1.08]"
+        >
+          <span className="block">What web problems</span>
+          <span className="mt-1 block text-zinc-500">
+            would you like to solve next?
+          </span>
+        </h2>
+        <div className="mx-auto mt-8 max-w-2xl border-l-2 border-zinc-900/10 pl-5">
+          <p className="text-base leading-relaxed text-zinc-600 sm:text-lg">
+            From first landing page to long-term product work, we help teams ship fast,
+            reliable sites—clear scope, modern stacks, and documentation you can hand off
+            without guesswork.
+          </p>
+        </div>
+
+        <ul className="mt-14 grid list-none gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-8">
           {cards.map(({ title, description, Icon }) => (
             <li key={title}>
-              <article className="group flex h-full flex-col rounded-xl border border-zinc-100 bg-white px-6 py-8 text-center shadow-md shadow-zinc-200/60 transition duration-300 ease-out motion-safe:hover:-translate-y-1 hover:border-zinc-300 hover:shadow-xl hover:shadow-zinc-300/45">
-                <div className="mb-5 flex justify-center transition-transform duration-300 ease-out motion-safe:group-hover:scale-110">
+              <article className="group flex h-full flex-col rounded-2xl border border-zinc-200/80 bg-white/90 px-6 py-7 shadow-sm shadow-zinc-200/40 ring-1 ring-zinc-950/[0.03] transition-[border-color,box-shadow,transform] duration-300 ease-out motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-[0_24px_48px_-12px_rgb(0_0_0_/0.08)] hover:border-zinc-300/90 sm:px-7 sm:py-8">
+                <div className="mb-5 inline-flex rounded-2xl bg-zinc-100 p-3.5 ring-1 ring-zinc-950/[0.04] transition-transform duration-300 ease-out motion-safe:group-hover:scale-[1.03]">
                   <Icon />
                 </div>
-                <h3 className="text-lg font-semibold leading-snug text-black sm:text-xl">
+                <h3 className="text-lg font-semibold leading-snug text-zinc-900 sm:text-xl">
                   {title}
                 </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-black sm:text-[0.9375rem]">
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-zinc-600 sm:text-[0.9375rem]">
                   {description}
                 </p>
               </article>

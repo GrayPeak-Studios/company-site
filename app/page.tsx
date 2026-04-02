@@ -1,6 +1,7 @@
 import { Hero } from "@/components/Home/Hero";
 import { Services } from "@/components/Home/Services";
 import { WhyChooseUs } from "@/components/Home/WhyChooseUs";
+import { CTA } from "@/components/Home/CTA";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <Services />
       <WhyChooseUs />
+      <CTA />
     </main>
   );
 }

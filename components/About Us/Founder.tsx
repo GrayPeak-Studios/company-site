@@ -63,7 +63,7 @@ export function Founder() {
     >
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
-          <div className="lg:col-span-5">
+          <div className="order-2 lg:order-1 lg:col-span-5">
             <p className="font-mono text-xs font-medium tracking-wide text-zinc-500">
               <span className="text-zinc-400">//</span> FOUNDER
             </p>
@@ -92,7 +92,7 @@ export function Founder() {
             </div>
           </div>
 
-          <div className="flex justify-center lg:col-span-6">
+          <div className="order-1 flex justify-center lg:order-2 lg:col-span-6">
             <div
               className="flex aspect-[3/4] w-full max-w-[18rem] items-center justify-center sm:max-w-xs lg:max-w-sm"
               role="img"
@@ -107,7 +107,7 @@ export function Founder() {
           </div>
 
           <nav
-            className="flex flex-row justify-center gap-3 lg:col-span-1 lg:flex-col lg:items-center lg:justify-center lg:gap-4"
+            className="order-3 flex flex-row justify-center gap-3 lg:col-span-1 lg:flex-col lg:items-center lg:justify-center lg:gap-4"
             aria-label="Founder social links"
           >
             {founderSocials.map(({ label, href, Icon }) => (

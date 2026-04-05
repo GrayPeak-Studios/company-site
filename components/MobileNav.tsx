@@ -9,10 +9,10 @@ export function MobileNav({ links }: { links: readonly NavLink[] }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="md:hidden">
+    <div className="relative md:hidden">
       <button
         type="button"
-        className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-zinc-700 transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900"
+        className="inline-flex h-10 w-10 items-center justify-center rounded-full text-zinc-700 hover:bg-zinc-100/90 hover:text-zinc-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
         aria-expanded={open}
         aria-controls="mobile-nav-panel"
         aria-label={open ? "Close menu" : "Open menu"}
@@ -54,27 +54,27 @@ export function MobileNav({ links }: { links: readonly NavLink[] }) {
       {open ? (
         <div
           id="mobile-nav-panel"
-          className="absolute left-0 right-0 top-full border-b border-zinc-200/80 bg-white/95 px-4 py-4 shadow-lg shadow-zinc-900/5 backdrop-blur-md"
+          className="absolute right-0 top-[calc(100%+0.5rem)] z-50 w-[min(100vw-2rem,20rem)] rounded-2xl border border-zinc-200/80 bg-white/95 p-2 shadow-[0_24px_48px_-12px_rgb(0_0_0_/0.12)] ring-1 ring-zinc-950/[0.04] backdrop-blur-md"
         >
-          <ul className="flex flex-col gap-1">
+          <ul className="flex flex-col gap-0.5">
             {links.map((item) => (
               <li key={item.href + item.label}>
                 <Link
                   href={item.href}
-                  className="block rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-100 hover:text-zinc-900"
+                  className="block rounded-xl px-3 py-2.5 text-sm font-medium text-zinc-700 hover:bg-zinc-100/90 hover:text-zinc-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
                 </Link>
               </li>
             ))}
-            <li className="pt-2">
+            <li className="border-t border-zinc-100 pt-2 mt-1">
               <Link
                 href="/contact"
-                className="block rounded-lg bg-zinc-900 px-3 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-zinc-800"
+                className="block rounded-full bg-zinc-950 px-3 py-2.5 text-center text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
                 onClick={() => setOpen(false)}
               >
-                Get Started
+                Get started
               </Link>
             </li>
           </ul>

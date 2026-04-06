@@ -223,10 +223,14 @@ const cards = [
   },
 ];
 
+import { SectionWrapper } from "@/components/layout/SectionWrapper";
+
 export function Services() {
   return (
-    <section
-      className="relative isolate overflow-hidden border-b border-zinc-200/70 bg-gradient-to-b from-zinc-100/70 via-white to-zinc-50/40 px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28"
+    <SectionWrapper
+      py="py-20 sm:py-24 lg:py-28"
+      className="relative isolate overflow-hidden border-b border-zinc-200/70 bg-gradient-to-b from-zinc-100/70 via-white to-zinc-50/40"
+      innerClassName="relative"
       aria-labelledby="services-heading"
     >
       <div
@@ -246,7 +250,7 @@ export function Services() {
         <div className="absolute bottom-0 right-0 h-[min(55vw,22rem)] w-[min(55vw,22rem)] translate-x-1/4 translate-y-1/3 rounded-full bg-zinc-200/40 blur-3xl" />
       </div>
 
-      <div className="relative mx-auto max-w-6xl">
+      <div>
         <p className="text-center font-mono text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
           Capabilities
         </p>
@@ -285,6 +289,6 @@ export function Services() {
           ))}
         </ul>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

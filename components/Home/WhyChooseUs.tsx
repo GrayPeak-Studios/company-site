@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionWrapper } from "@/components/layout/SectionWrapper";
 
 const cardBase =
   "flex flex-col rounded-2xl border border-zinc-200/80 bg-white/90 p-7 shadow-sm shadow-zinc-200/40 ring-1 ring-zinc-950/[0.03] transition-[border-color,box-shadow,transform] duration-300 ease-out motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-[0_24px_48px_-12px_rgb(0_0_0_/0.08)] hover:border-zinc-300/90 sm:p-8";
@@ -144,8 +145,10 @@ export function WhyChooseUs() {
   const TallIcon = iconComponents[c.tall.icon];
 
   return (
-    <section
-      className="relative isolate overflow-hidden border-b border-zinc-200/70 bg-gradient-to-b from-white via-zinc-50/50 to-zinc-100/60 px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28"
+    <SectionWrapper
+      py="py-20 sm:py-24 lg:py-28"
+      className="relative isolate overflow-hidden border-b border-zinc-200/70 bg-gradient-to-b from-white via-zinc-50/50 to-zinc-100/60"
+      innerClassName="relative"
       aria-labelledby="why-choose-heading"
     >
       <div
@@ -165,7 +168,7 @@ export function WhyChooseUs() {
         <div className="absolute bottom-0 right-0 h-[min(65vw,26rem)] w-[min(65vw,26rem)] translate-x-1/4 translate-y-1/4 rounded-full bg-white/80 blur-3xl" />
       </div>
 
-      <div className="relative mx-auto max-w-6xl">
+      <div>
         <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
           {c.badge}
         </p>
@@ -253,6 +256,6 @@ export function WhyChooseUs() {
           </article>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
+import { IconWell } from "@/components/ui/IconWell";
 import type { IconType } from "react-icons";
 import {
   HiOutlineClipboardDocumentCheck,
@@ -310,9 +311,9 @@ export function CompanyGoals() {
                   <span className="font-mono text-[0.65rem] font-medium tabular-nums text-zinc-400">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <div className="mt-3 inline-flex rounded-2xl bg-zinc-100 p-3 ring-1 ring-zinc-950/[0.04]">
+                  <IconWell className="mt-3">
                     <Icon className="h-6 w-6 text-zinc-700" aria-hidden />
-                  </div>
+                  </IconWell>
                   <h3 className="mt-4 text-base font-semibold leading-snug text-zinc-900 sm:text-lg">
                     {title}
                   </h3>

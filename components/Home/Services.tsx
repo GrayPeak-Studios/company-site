@@ -224,6 +224,7 @@ const cards = [
 ];
 
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
+import { IconWell } from "@/components/ui/IconWell";
 
 export function Services() {
   return (
@@ -275,9 +276,9 @@ export function Services() {
           {cards.map(({ title, description, Icon }) => (
             <li key={title}>
               <article className="group flex h-full flex-col rounded-2xl border border-zinc-200/80 bg-white/90 px-6 py-7 shadow-sm shadow-zinc-200/40 ring-1 ring-zinc-950/[0.03] transition-[border-color,box-shadow,transform] duration-300 ease-out motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-[0_24px_48px_-12px_rgb(0_0_0_/0.08)] hover:border-zinc-300/90 sm:px-7 sm:py-8">
-                <div className="mb-5 inline-flex rounded-2xl bg-zinc-100 p-3.5 ring-1 ring-zinc-950/[0.04] transition-transform duration-300 ease-out motion-safe:group-hover:scale-[1.03]">
+                <IconWell className="mb-5 transition-transform duration-300 ease-out motion-safe:group-hover:scale-[1.03]">
                   <Icon />
-                </div>
+                </IconWell>
                 <h3 className="text-lg font-semibold leading-snug text-zinc-900 sm:text-xl">
                   {title}
                 </h3>

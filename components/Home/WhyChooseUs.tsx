@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
+import { IconWell } from "@/components/ui/IconWell";
 
 const cardBase =
   "flex flex-col rounded-2xl border border-zinc-200/80 bg-white/90 p-7 shadow-sm shadow-zinc-200/40 ring-1 ring-zinc-950/[0.03] transition-[border-color,box-shadow,transform] duration-300 ease-out motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-[0_24px_48px_-12px_rgb(0_0_0_/0.08)] hover:border-zinc-300/90 sm:p-8";
@@ -126,17 +127,6 @@ const iconComponents = {
   tablet: IconTablet,
 } as const;
 
-function IconWell({ children }: { children: React.ReactNode }) {
-  return (
-    <div
-      className="mb-5 inline-flex rounded-2xl bg-zinc-100 p-3.5 ring-1 ring-zinc-950/[0.04]"
-      aria-hidden
-    >
-      {children}
-    </div>
-  );
-}
-
 export function WhyChooseUs() {
   const c = whyChooseUsContent;
   const TopLeftIcon = iconComponents[c.topLeft.icon];
@@ -188,7 +178,7 @@ export function WhyChooseUs() {
           <article
             className={`${cardBase} md:col-start-1 md:row-start-1`}
           >
-            <IconWell>
+            <IconWell className="mb-5">
               <TopLeftIcon />
             </IconWell>
             <h3 className="text-lg font-semibold leading-snug text-zinc-900 sm:text-xl">
@@ -202,7 +192,7 @@ export function WhyChooseUs() {
           <article
             className={`${cardBase} md:col-start-2 md:row-start-1`}
           >
-            <IconWell>
+            <IconWell className="mb-5">
               <TopMidIcon />
             </IconWell>
             <h3 className="text-lg font-semibold leading-snug text-zinc-900 sm:text-xl">
@@ -216,7 +206,7 @@ export function WhyChooseUs() {
           <article
             className={`${cardBase} md:col-span-2 md:col-start-1 md:row-start-2`}
           >
-            <IconWell>
+            <IconWell className="mb-5">
               <WideIcon />
             </IconWell>
             <h3 className="text-lg font-semibold leading-snug text-zinc-900 sm:text-xl">
@@ -230,7 +220,7 @@ export function WhyChooseUs() {
           <article
             className={`${cardFeatured} md:col-start-3 md:row-span-2 md:row-start-1`}
           >
-            <IconWell>
+            <IconWell className="mb-5">
               <TallIcon />
             </IconWell>
             <h3 className="text-lg font-semibold leading-snug text-zinc-900 sm:text-xl">

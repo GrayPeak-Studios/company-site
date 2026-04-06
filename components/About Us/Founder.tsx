@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
+import { Button } from "@/components/ui/Button";
 
 const founderSocials = [
   {
@@ -83,12 +83,7 @@ export function Founder() {
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
-              <Link
-                href="/contact"
-                className="inline-flex h-12 items-center justify-center rounded-full bg-zinc-950 px-8 text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
-              >
-                Get started
-              </Link>
+              <Button href="/contact">Get started</Button>
             </div>
           </div>
 

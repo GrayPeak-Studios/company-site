@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
 import { GridPattern } from "@/components/ui/GridPattern";
+import { Button } from "@/components/ui/Button";
 
 const titleLine1 = "GrayPeak";
 const titleLine2 = "Studio";
@@ -202,12 +203,7 @@ export function Hero() {
               {subtitle}
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
-              <Link
-                href="/contact"
-                className="inline-flex h-12 items-center justify-center rounded-full bg-zinc-950 px-8 text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
-              >
-                Start a project
-              </Link>
+              <Button href="/contact">Start a project</Button>
               <Link
                 href="/services"
                 className="inline-flex items-center gap-1 text-sm font-medium text-zinc-600 underline decoration-zinc-300 underline-offset-[0.22em] hover:text-zinc-900 hover:decoration-zinc-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"

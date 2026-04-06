@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
 import { GridPattern } from "@/components/ui/GridPattern";
+import { Button } from "@/components/ui/Button";
 
 export function CTA() {
   return (
@@ -47,12 +48,9 @@ export function CTA() {
             </p>
           </div>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
-            <Link
-              href="/contact"
-              className="inline-flex h-12 w-full items-center justify-center rounded-full bg-white px-8 text-sm font-semibold text-zinc-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto"
-            >
+            <Button href="/contact" variant="inverse" className="w-full sm:w-auto">
               Book a meeting
-            </Link>
+            </Button>
             <Link
               href="/services"
               className="inline-flex w-full items-center justify-center gap-1 text-sm font-medium text-zinc-300 underline decoration-white/25 underline-offset-4 transition-colors hover:text-white hover:decoration-white/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto sm:justify-start"

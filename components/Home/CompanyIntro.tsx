@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
 import { GridPattern } from "@/components/ui/GridPattern";
+import { Button } from "@/components/ui/Button";
 
 const headingLine1 = "Ship sites that feel fast";
 const headingLine2 = "and stay reliable.";
@@ -170,12 +171,7 @@ export function CompanyIntro() {
               {body}
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
-              <Link
-                href="/contact"
-                className="inline-flex h-12 items-center justify-center rounded-full bg-white px-8 text-sm font-semibold text-zinc-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              >
-                Plan a call
-              </Link>
+              <Button href="/contact" variant="inverse">Plan a call</Button>
               <Link
                 href="/services"
                 className="inline-flex items-center gap-1 text-sm font-medium text-zinc-300 underline decoration-white/25 underline-offset-4 transition-colors hover:text-white hover:decoration-white/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"

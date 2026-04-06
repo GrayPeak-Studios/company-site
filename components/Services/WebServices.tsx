@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
 import { GridPattern } from "@/components/ui/GridPattern";
+import { FeatureCard } from "@/components/ui/FeatureCard";
 import type { IconType } from "react-icons";
 import {
   HiOutlineArrowPath,
@@ -108,7 +109,7 @@ export function WebServices() {
         <ul className="mt-14 grid list-none gap-6 sm:grid-cols-2 lg:mt-16 lg:gap-8">
           {services.map(({ title, description, priceLabel, Icon }) => (
             <li key={title}>
-              <article className="group flex h-full flex-col rounded-2xl border border-zinc-200/80 bg-white/90 px-6 py-7 shadow-sm shadow-zinc-200/40 ring-1 ring-zinc-950/[0.03] transition-[border-color,box-shadow,transform] duration-300 ease-out motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-[0_24px_48px_-12px_rgb(0_0_0_/0.08)] hover:border-zinc-300/90 sm:px-7 sm:py-8">
+              <FeatureCard>
                 <div className="flex justify-center sm:justify-start">
                   <IconRippleFrame>
                     <Icon className="h-5 w-5 text-zinc-700" aria-hidden />
@@ -137,7 +138,7 @@ export function WebServices() {
                     </span>
                   </Link>
                 </div>
-              </article>
+              </FeatureCard>
             </li>
           ))}
         </ul>

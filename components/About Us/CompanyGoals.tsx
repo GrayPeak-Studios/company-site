@@ -1,7 +1,8 @@
-import Link from "next/link";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
 import { GridPattern } from "@/components/ui/GridPattern";
 import { IconWell } from "@/components/ui/IconWell";
+import { Button } from "@/components/ui/Button";
+import { FeatureCard } from "@/components/ui/FeatureCard";
 import type { IconType } from "react-icons";
 import {
   HiOutlineClipboardDocumentCheck,
@@ -196,12 +197,7 @@ export function CompanyGoals() {
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-600 sm:text-xl">
             {missionBody}
           </p>
-          <Link
-            href="/contact"
-            className="mt-10 inline-flex h-12 items-center justify-center rounded-full bg-zinc-950 px-8 text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
-          >
-            Get in touch
-          </Link>
+          <Button href="/contact" className="mt-10">Get in touch</Button>
       </SectionWrapper>
 
       <SectionWrapper
@@ -284,7 +280,7 @@ export function CompanyGoals() {
           <ul className="mt-14 grid list-none grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-16 lg:gap-8">
             {howWeWorkSteps.map(({ title, description, Icon }, index) => (
               <li key={title}>
-                <article className="group flex h-full flex-col rounded-2xl border border-zinc-200/80 bg-white/90 px-6 py-7 shadow-sm shadow-zinc-200/40 ring-1 ring-zinc-950/[0.03] transition-[border-color,box-shadow,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none motion-safe:hover:-translate-y-0.5 motion-safe:hover:border-zinc-300/90 motion-safe:hover:shadow-[0_8px_20px_rgb(0_0_0_/0.05),0_22px_48px_-12px_rgb(0_0_0_/0.11)] sm:px-7 sm:py-8">
+                <FeatureCard>
                   <span className="font-mono text-[0.65rem] font-medium tabular-nums text-zinc-400">
                     {String(index + 1).padStart(2, "0")}
                   </span>
@@ -297,7 +293,7 @@ export function CompanyGoals() {
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-600 sm:text-[0.9375rem]">
                     {description}
                   </p>
-                </article>
+                </FeatureCard>
               </li>
             ))}
           </ul>

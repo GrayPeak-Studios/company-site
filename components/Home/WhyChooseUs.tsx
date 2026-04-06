@@ -1,10 +1,8 @@
-import Link from "next/link";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
 import { GridPattern } from "@/components/ui/GridPattern";
 import { IconWell } from "@/components/ui/IconWell";
-
-const cardBase =
-  "flex flex-col rounded-2xl border border-zinc-200/80 bg-white/90 p-7 shadow-sm shadow-zinc-200/40 ring-1 ring-zinc-950/[0.03] transition-[border-color,box-shadow,transform] duration-300 ease-out motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-[0_24px_48px_-12px_rgb(0_0_0_/0.08)] hover:border-zinc-300/90 sm:p-8";
+import { Button } from "@/components/ui/Button";
+import { FeatureCard } from "@/components/ui/FeatureCard";
 
 const cardFeatured =
   "flex flex-col rounded-2xl border border-zinc-900/25 bg-gradient-to-b from-zinc-50/95 to-white p-7 shadow-md shadow-zinc-300/30 ring-1 ring-zinc-900/[0.08] transition-[border-color,box-shadow,transform] duration-300 ease-out motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-[0_28px_56px_-14px_rgb(0_0_0_/0.12)] hover:border-zinc-900/40 sm:p-8";
@@ -168,9 +166,7 @@ export function WhyChooseUs() {
         </h2>
 
         <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3 md:grid-rows-2 md:gap-8">
-          <article
-            className={`${cardBase} md:col-start-1 md:row-start-1`}
-          >
+          <FeatureCard className="md:col-start-1 md:row-start-1">
             <IconWell className="mb-5">
               <TopLeftIcon />
             </IconWell>
@@ -180,11 +176,9 @@ export function WhyChooseUs() {
             <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-[0.9375rem]">
               {c.topLeft.description}
             </p>
-          </article>
+          </FeatureCard>
 
-          <article
-            className={`${cardBase} md:col-start-2 md:row-start-1`}
-          >
+          <FeatureCard className="md:col-start-2 md:row-start-1">
             <IconWell className="mb-5">
               <TopMidIcon />
             </IconWell>
@@ -194,11 +188,9 @@ export function WhyChooseUs() {
             <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-[0.9375rem]">
               {c.topMiddle.description}
             </p>
-          </article>
+          </FeatureCard>
 
-          <article
-            className={`${cardBase} md:col-span-2 md:col-start-1 md:row-start-2`}
-          >
+          <FeatureCard className="md:col-span-2 md:col-start-1 md:row-start-2">
             <IconWell className="mb-5">
               <WideIcon />
             </IconWell>
@@ -208,7 +200,7 @@ export function WhyChooseUs() {
             <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-[0.9375rem]">
               {c.bottomWide.description}
             </p>
-          </article>
+          </FeatureCard>
 
           <article
             className={`${cardFeatured} md:col-start-3 md:row-span-2 md:row-start-1`}
@@ -227,15 +219,10 @@ export function WhyChooseUs() {
                 {paragraph}
               </p>
             ))}
-            <Link
-              href={c.tall.cta.href}
-              className="mt-8 inline-flex h-12 w-fit items-center gap-2 rounded-full bg-zinc-950 px-8 text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
-            >
+            <Button href={c.tall.cta.href} className="mt-8 w-fit gap-2">
               {c.tall.cta.label}
-              <span aria-hidden className="translate-y-px">
-                →
-              </span>
-            </Link>
+              <span aria-hidden className="translate-y-px">→</span>
+            </Button>
           </article>
         </div>
       </div>

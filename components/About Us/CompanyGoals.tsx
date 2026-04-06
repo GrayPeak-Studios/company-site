@@ -306,7 +306,7 @@ export function CompanyGoals() {
           <ul className="mt-14 grid list-none grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-16 lg:gap-8">
             {howWeWorkSteps.map(({ title, description, Icon }, index) => (
               <li key={title}>
-                <article className="group flex h-full flex-col rounded-2xl border border-zinc-200/80 bg-white/90 px-5 py-6 shadow-sm shadow-zinc-200/40 ring-1 ring-zinc-950/[0.03] transition-[border-color,box-shadow,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none motion-safe:hover:-translate-y-0.5 motion-safe:hover:border-zinc-300/90 motion-safe:hover:shadow-[0_8px_20px_rgb(0_0_0_/0.05),0_22px_48px_-12px_rgb(0_0_0_/0.11)] sm:px-6 sm:py-7">
+                <article className="group flex h-full flex-col rounded-2xl border border-zinc-200/80 bg-white/90 px-6 py-7 shadow-sm shadow-zinc-200/40 ring-1 ring-zinc-950/[0.03] transition-[border-color,box-shadow,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none motion-safe:hover:-translate-y-0.5 motion-safe:hover:border-zinc-300/90 motion-safe:hover:shadow-[0_8px_20px_rgb(0_0_0_/0.05),0_22px_48px_-12px_rgb(0_0_0_/0.11)] sm:px-7 sm:py-8">
                   <span className="font-mono text-[0.65rem] font-medium tabular-nums text-zinc-400">
                     {String(index + 1).padStart(2, "0")}
                   </span>

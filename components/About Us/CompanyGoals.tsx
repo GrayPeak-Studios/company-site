@@ -226,7 +226,7 @@ export function CompanyGoals() {
         />
 
         <div className="mx-auto max-w-3xl">
-            <p className="font-mono text-xs font-medium tracking-wide text-zinc-500">
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
               <span className="text-zinc-400">//</span> WHO WE HELP
             </p>
             <h2
@@ -289,7 +289,7 @@ export function CompanyGoals() {
           <div className="absolute bottom-0 left-0 h-[min(50vw,20rem)] w-[min(50vw,20rem)] -translate-x-1/4 translate-y-1/3 rounded-full bg-zinc-200/35 blur-3xl" />
         </div>
           <div className="mx-auto max-w-3xl text-center">
-            <p className="font-mono text-xs font-medium tracking-wide text-zinc-500">
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
               <span className="text-zinc-400">//</span> HOW WE WORK
             </p>
             <h2

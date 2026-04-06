@@ -2,11 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
+import { getSiteUrl, siteDescription, siteName } from "@/lib/site";
 import "./globals.css";
-
-const siteName = "GrayPeak Studio";
-const siteDescription =
-  "Web design and development crafted for clarity, speed, and lasting quality.";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,9 +15,35 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const metadataBase = new URL(getSiteUrl());
+
 export const metadata: Metadata = {
-  title: siteName,
+  metadataBase,
+  title: {
+    default: siteName,
+    template: `%s | ${siteName}`,
+  },
   description: siteDescription,
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: metadataBase,
+    siteName,
+    title: siteName,
+    description: siteDescription,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteName,
+    description: siteDescription,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

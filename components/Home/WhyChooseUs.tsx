@@ -194,7 +194,7 @@ export function WhyChooseUs() {
             <h3 className="text-lg font-semibold leading-snug text-zinc-900 sm:text-xl">
               {c.topLeft.title}
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-base">
+            <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-[0.9375rem]">
               {c.topLeft.description}
             </p>
           </article>
@@ -208,7 +208,7 @@ export function WhyChooseUs() {
             <h3 className="text-lg font-semibold leading-snug text-zinc-900 sm:text-xl">
               {c.topMiddle.title}
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-base">
+            <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-[0.9375rem]">
               {c.topMiddle.description}
             </p>
           </article>
@@ -222,7 +222,7 @@ export function WhyChooseUs() {
             <h3 className="text-lg font-semibold leading-snug text-zinc-900 sm:text-xl">
               {c.bottomWide.title}
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-base">
+            <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-[0.9375rem]">
               {c.bottomWide.description}
             </p>
           </article>
@@ -239,7 +239,7 @@ export function WhyChooseUs() {
             {c.tall.paragraphs.map((paragraph, i) => (
               <p
                 key={i}
-                className={`text-sm leading-relaxed text-zinc-600 sm:text-base ${i === 0 ? "mt-3 flex-1" : "mt-4"}`}
+                className={`text-sm leading-relaxed text-zinc-600 sm:text-[0.9375rem] ${i === 0 ? "mt-3 flex-1" : "mt-4"}`}
               >
                 {paragraph}
               </p>

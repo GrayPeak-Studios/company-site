@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionWrapper } from "@/components/layout/SectionWrapper";
 import type { IconType } from "react-icons";
 import {
   HiOutlineClipboardDocumentCheck,
@@ -161,9 +162,11 @@ function IllustrationTeams() {
 export function CompanyGoals() {
   return (
     <>
-      <section
+      <SectionWrapper
         className="relative isolate overflow-hidden border-b border-zinc-200/70"
         aria-labelledby="our-mission-heading"
+        py="py-20 sm:py-24 lg:py-28"
+        innerClassName="flex flex-col items-center text-center"
       >
         <div
           className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-zinc-100/80 via-white to-white"
@@ -187,7 +190,6 @@ export function CompanyGoals() {
             backgroundSize: "48px 48px",
           }}
         />
-        <div className="mx-auto flex max-w-6xl flex-col items-center px-4 py-20 text-center sm:px-6 sm:py-24 lg:px-8 lg:py-28">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
             About GrayPeak
           </p>
@@ -206,12 +208,12 @@ export function CompanyGoals() {
           >
             Get in touch
           </Link>
-        </div>
-      </section>
+      </SectionWrapper>
 
-      <section
+      <SectionWrapper
         className="relative isolate overflow-hidden border-b border-zinc-200/70 bg-white"
         aria-labelledby="who-we-help-heading"
+        innerClassName="relative text-center"
       >
         <div
           className="pointer-events-none absolute inset-0 -z-10 opacity-[0.35]"
@@ -223,8 +225,7 @@ export function CompanyGoals() {
           }}
         />
 
-        <div className="relative mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-          <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-3xl">
             <p className="font-mono text-xs font-medium tracking-wide text-zinc-500">
               <span className="text-zinc-400">//</span> WHO WE HELP
             </p>
@@ -264,12 +265,12 @@ export function CompanyGoals() {
               </p>
             </article>
           </div>
-        </div>
-      </section>
+      </SectionWrapper>
 
-      <section
+      <SectionWrapper
         className="relative isolate overflow-hidden border-b border-zinc-200/70 bg-gradient-to-b from-zinc-100/70 via-white to-zinc-50/40"
         aria-labelledby="how-we-work-heading"
+        innerClassName="relative"
       >
         <div
           className="pointer-events-none absolute inset-0 -z-10 opacity-[0.35]"
@@ -287,8 +288,6 @@ export function CompanyGoals() {
           <div className="absolute left-1/2 top-0 h-[min(75vw,26rem)] w-[min(75vw,26rem)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/90 blur-3xl" />
           <div className="absolute bottom-0 left-0 h-[min(50vw,20rem)] w-[min(50vw,20rem)] -translate-x-1/4 translate-y-1/3 rounded-full bg-zinc-200/35 blur-3xl" />
         </div>
-
-        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <div className="mx-auto max-w-3xl text-center">
             <p className="font-mono text-xs font-medium tracking-wide text-zinc-500">
               <span className="text-zinc-400">//</span> HOW WE WORK
@@ -324,8 +323,7 @@ export function CompanyGoals() {
               </li>
             ))}
           </ul>
-        </div>
-      </section>
+      </SectionWrapper>
     </>
   );
 }

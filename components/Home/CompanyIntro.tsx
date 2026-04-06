@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionWrapper } from "@/components/layout/SectionWrapper";
 
 const headingLine1 = "Ship sites that feel fast";
 const headingLine2 = "and stay reliable.";
@@ -137,7 +138,7 @@ function ProcessPipelineIllustration({ className }: { className?: string }) {
 
 export function CompanyIntro() {
   return (
-    <section
+    <SectionWrapper
       className="relative isolate overflow-hidden border-y border-white/10 bg-zinc-950 text-white"
       aria-labelledby="company-intro-heading"
     >
@@ -157,7 +158,7 @@ export function CompanyIntro() {
         />
       </div>
 
-      <div className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <div>
         <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-12">
           {/* Copy: first on mobile, right column on large screens */}
           <div className="order-1 lg:order-2 lg:col-span-7 lg:pl-6 xl:pl-10">
@@ -199,6 +200,6 @@ export function CompanyIntro() {
           </div>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

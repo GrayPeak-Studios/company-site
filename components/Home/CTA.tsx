@@ -1,10 +1,13 @@
 import Link from "next/link";
+import { SectionWrapper } from "@/components/layout/SectionWrapper";
 
 export function CTA() {
   return (
-    <section
-      className="relative isolate overflow-hidden border-t border-white/10 bg-zinc-950 py-20 text-white sm:py-24 lg:py-28"
+    <SectionWrapper
+      className="relative isolate overflow-hidden border-t border-white/10 bg-zinc-950 text-white"
       aria-labelledby="cta-heading"
+      py="py-20 sm:py-24 lg:py-28"
+      innerClassName="relative z-10"
     >
       <div
         className="pointer-events-none absolute inset-0 -z-10 opacity-[0.35]"
@@ -29,7 +32,7 @@ export function CTA() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div>
         <div className="max-w-2xl lg:max-w-[55%]">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
             Next step
@@ -69,6 +72,6 @@ export function CTA() {
           </div>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

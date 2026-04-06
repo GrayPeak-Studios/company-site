@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionWrapper } from "@/components/layout/SectionWrapper";
 
 const titleLine1 = "GrayPeak";
 const titleLine2 = "Studio";
@@ -168,9 +169,10 @@ function HeroWebDevIllustration({ className }: { className?: string }) {
 
 export function Hero() {
   return (
-    <section
+    <SectionWrapper
       className="relative isolate overflow-hidden border-b border-zinc-200/70 bg-gradient-to-b from-zinc-100/90 via-white to-white"
       aria-labelledby="hero-heading"
+      py="py-20 sm:py-24 lg:py-28"
     >
       <div
         className="pointer-events-none absolute inset-0 -z-10 opacity-[0.4]"
@@ -190,7 +192,7 @@ export function Hero() {
         <div className="absolute left-1/2 top-1/2 h-[min(100vw,38rem)] w-[min(100vw,38rem)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/80 blur-3xl" />
       </div>
 
-      <div className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
+      <div>
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-12 xl:gap-16">
           <div>
             <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
@@ -232,6 +234,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

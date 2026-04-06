@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, type FormEvent } from "react";
+import { SectionWrapper } from "@/components/layout/SectionWrapper";
 import {
   HiArrowRight,
   HiOutlineBuildingOffice2,
@@ -343,9 +344,10 @@ function ContactForm() {
 
 export function ContactUs() {
   return (
-    <section
+    <SectionWrapper
       className="relative isolate flex h-full flex-col overflow-hidden bg-white"
       aria-labelledby="contact-heading"
+      innerClassName="relative z-10 flex-1"
     >
       <div
         className="pointer-events-none absolute inset-0 -z-10 opacity-[0.35]"
@@ -361,7 +363,7 @@ export function ContactUs() {
         <div className="absolute bottom-0 left-0 h-[min(50vw,20rem)] w-[min(50vw,20rem)] -translate-x-1/4 translate-y-1/3 rounded-full bg-zinc-200/35 blur-3xl" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl flex-1 px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <div>
         <div className="grid gap-12 lg:grid-cols-12 lg:items-start lg:gap-16">
           <div className="lg:col-span-5">
             <span className="inline-flex rounded-full border border-zinc-200/90 bg-zinc-50 px-3 py-1 text-xs font-medium text-zinc-700">
@@ -390,6 +392,6 @@ export function ContactUs() {
           </div>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

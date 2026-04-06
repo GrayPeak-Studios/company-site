@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionWrapper } from "@/components/layout/SectionWrapper";
 
 const founderSocials = [
   {
@@ -57,11 +58,10 @@ function IconGitHub({ className }: { className?: string }) {
 
 export function Founder() {
   return (
-    <section
+    <SectionWrapper
       className="relative isolate overflow-hidden border-b border-zinc-200/70 bg-white"
       aria-labelledby="founder-heading"
     >
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="order-2 lg:order-1 lg:col-span-5">
             <p className="font-mono text-xs font-medium tracking-wide text-zinc-500">
@@ -124,7 +124,6 @@ export function Founder() {
             ))}
           </nav>
         </div>
-      </div>
-    </section>
+    </SectionWrapper>
   );
 }

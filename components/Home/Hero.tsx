@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
+import { GridPattern } from "@/components/ui/GridPattern";
 
 const titleLine1 = "GrayPeak";
 const titleLine2 = "Studio";
@@ -174,15 +175,7 @@ export function Hero() {
       aria-labelledby="hero-heading"
       py="py-20 sm:py-24 lg:py-28"
     >
-      <div
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.4]"
-        aria-hidden
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, rgb(24 24 27 / 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgb(24 24 27 / 0.06) 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
-        }}
-      />
+      <GridPattern opacity={0.4} />
       <div
         className="pointer-events-none absolute inset-0 -z-10"
         aria-hidden

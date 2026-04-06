@@ -2,6 +2,7 @@
 
 import { useState, useRef, type FormEvent } from "react";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
+import { GridPattern } from "@/components/ui/GridPattern";
 import {
   HiArrowRight,
   HiOutlineBuildingOffice2,
@@ -349,15 +350,7 @@ export function ContactUs() {
       aria-labelledby="contact-heading"
       innerClassName="relative z-10 flex-1"
     >
-      <div
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.35]"
-        aria-hidden
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, rgb(24 24 27 / 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgb(24 24 27 / 0.05) 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
-        }}
-      />
+      <GridPattern />
       <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden>
         <div className="absolute left-1/2 top-0 h-[min(75vw,26rem)] w-[min(75vw,26rem)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/90 blur-3xl" />
         <div className="absolute bottom-0 left-0 h-[min(50vw,20rem)] w-[min(50vw,20rem)] -translate-x-1/4 translate-y-1/3 rounded-full bg-zinc-200/35 blur-3xl" />

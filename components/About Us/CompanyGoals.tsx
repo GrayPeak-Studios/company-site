@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
+import { GridPattern } from "@/components/ui/GridPattern";
 import { IconWell } from "@/components/ui/IconWell";
 import type { IconType } from "react-icons";
 import {
@@ -182,15 +183,7 @@ export function CompanyGoals() {
             backgroundSize: "10px 10px",
           }}
         />
-        <div
-          className="pointer-events-none absolute inset-0 -z-10 opacity-[0.3]"
-          aria-hidden
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, rgb(24 24 27 / 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgb(24 24 27 / 0.04) 1px, transparent 1px)",
-            backgroundSize: "48px 48px",
-          }}
-        />
+        <GridPattern opacity={0.3} />
           <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
             About GrayPeak
           </p>
@@ -216,15 +209,7 @@ export function CompanyGoals() {
         aria-labelledby="who-we-help-heading"
         innerClassName="relative text-center"
       >
-        <div
-          className="pointer-events-none absolute inset-0 -z-10 opacity-[0.35]"
-          aria-hidden
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, rgb(24 24 27 / 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgb(24 24 27 / 0.05) 1px, transparent 1px)",
-            backgroundSize: "48px 48px",
-          }}
-        />
+        <GridPattern />
 
         <div className="mx-auto max-w-3xl">
             <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
@@ -273,15 +258,7 @@ export function CompanyGoals() {
         aria-labelledby="how-we-work-heading"
         innerClassName="relative"
       >
-        <div
-          className="pointer-events-none absolute inset-0 -z-10 opacity-[0.35]"
-          aria-hidden
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, rgb(24 24 27 / 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgb(24 24 27 / 0.05) 1px, transparent 1px)",
-            backgroundSize: "48px 48px",
-          }}
-        />
+        <GridPattern />
         <div
           className="pointer-events-none absolute inset-0 -z-10"
           aria-hidden

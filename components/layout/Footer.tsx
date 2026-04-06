@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { GridPattern } from "@/components/ui/GridPattern";
 
 const siteName = "GrayPeak Studio";
 const siteDescription =
@@ -73,15 +74,7 @@ export function Footer() {
 
   return (
     <footer className="relative isolate overflow-hidden border-t border-zinc-200/70 bg-gradient-to-b from-zinc-50/90 to-white">
-      <div
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.35]"
-        aria-hidden
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, rgb(24 24 27 / 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgb(24 24 27 / 0.05) 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
-        }}
-      />
+      <GridPattern />
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-5">

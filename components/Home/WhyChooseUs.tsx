@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
+import { GridPattern } from "@/components/ui/GridPattern";
 import { IconWell } from "@/components/ui/IconWell";
 
 const cardBase =
@@ -141,15 +142,7 @@ export function WhyChooseUs() {
       innerClassName="relative"
       aria-labelledby="why-choose-heading"
     >
-      <div
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.35]"
-        aria-hidden
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, rgb(24 24 27 / 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgb(24 24 27 / 0.05) 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
-        }}
-      />
+      <GridPattern />
       <div
         className="pointer-events-none absolute inset-0 -z-10"
         aria-hidden

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
+import { GridPattern } from "@/components/ui/GridPattern";
 
 const headingLine1 = "Ship sites that feel fast";
 const headingLine2 = "and stay reliable.";
@@ -148,14 +149,7 @@ export function CompanyIntro() {
       >
         <div className="absolute -left-1/4 top-0 h-[min(90vw,520px)] w-[min(90vw,520px)] rounded-full bg-white/[0.07] blur-3xl" />
         <div className="absolute -right-1/5 bottom-0 h-[min(70vw,420px)] w-[min(70vw,420px)] rounded-full bg-zinc-600/20 blur-3xl" />
-        <div
-          className="absolute inset-0 opacity-[0.35]"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, rgb(255 255 255 / 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgb(255 255 255 / 0.04) 1px, transparent 1px)",
-            backgroundSize: "48px 48px",
-          }}
-        />
+        <GridPattern variant="dark" />
       </div>
 
       <div>

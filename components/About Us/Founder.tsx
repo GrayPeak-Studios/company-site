@@ -64,7 +64,7 @@ export function Founder() {
     >
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="order-2 lg:order-1 lg:col-span-5">
-            <p className="font-mono text-xs font-medium tracking-wide text-zinc-500">
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
               <span className="text-zinc-400">//</span> FOUNDER
             </p>
 
